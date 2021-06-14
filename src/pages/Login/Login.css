@@ -1,0 +1,28 @@
+.login-wapper{
+    width: 525px;
+    height: auto;
+    padding-top:100px ;
+}
+.body-login{
+    width: 100%;
+    background: url("https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg") no-repeat;
+}
+.sub-login{
+    padding: 50px 50px;
+    background: rgba(40,57,101,.9);
+  
+}
+.cust-login{
+    height: 50px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.1);
+    color: white;
+}
+.cust-submit-login{
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+}
+.footer-login{
+    text-align: center;
+}

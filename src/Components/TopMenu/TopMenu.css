@@ -1,0 +1,47 @@
+.menu-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+#logo-home{
+    width: 30%;
+    padding:  0px 10px 10px 0;
+}
+ul {
+    list-style: none;
+}
+.nav-link{
+    font-family:"THAIBEATS", Sans-serif;;
+    color: white;
+    font-size: 12px;
+}
+.item{
+    width: 60%;
+    text-align: center;
+}
+.header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    background: #070707;
+    height: 70px;
+    z-index: 3;  
+  
+}
+
+.top-list{
+    border-top: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+}
+.dropdown-menu{
+    background: rgb(6, 14, 36);
+}
+.dropdown-item{
+    color: white;
+}

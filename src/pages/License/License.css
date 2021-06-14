@@ -1,0 +1,38 @@
+.title{
+    padding: 50px 0px;
+}
+.sub-title{
+    padding: 20px 0px;
+    color:#ADADAD;
+    font-family: "Poppins", Sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5em;
+
+}
+.body-License{
+    border:1px solid #2A2A2A;
+    border-radius: 5px;
+}
+.sub-body-License{
+    padding: 50px 50px;
+}
+.form-control{
+    background: white;
+}
+.custom .form-control{
+    background: #2A2A2A;
+}
+.table{
+    padding: 30px 0px;
+}
+table{
+    width: 100%;
+    border: 1px solid #2A2A2A;
+    color: #ADADAD;
+}
+.cust-select{
+    width: 48.5%;
+}
+.cust .form-control{
+    background:#000 ;
+}

@@ -1,0 +1,20 @@
+.wrapper{
+    background: #000;
+}
+.container{
+    color: #dedede;
+}
+.body-contact{
+    border:1px solid #2A2A2A;
+    border-radius: 5px;
+}
+.sub-body-contact{
+    padding: 50px 50px;
+}
+.custom .form-control{
+    height: 50px;
+    background: #2A2A2A;
+}
+.sub-button{
+   text-align: center;
+}

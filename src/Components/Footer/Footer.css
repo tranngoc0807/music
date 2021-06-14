@@ -1,0 +1,67 @@
+.wrapper{
+    color:white;
+}
+.title{
+    text-align: center;
+}
+.top-title{
+    font-family: "THAIBEATS", Sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1.5em;
+    padding: 100px 0 20px 0;
+}
+.bottom-title{
+    font-family: "Poppins", Sans-serif;
+    font-size: 1.2em;
+
+}
+.list-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+
+
+}
+.sub-item{
+   width: 19%;
+    text-align:center;
+  border: 1px solid #2A2A2A;
+  border-radius: 10px;
+}
+.price{
+    font-family: "Poppins", Sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color:#f4c82a;
+}
+.footer-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+}
+.sub-footer-item{
+    width: 30%;
+    border: 1px solid #2A2A2A;
+    border-radius: 10px;
+    height: 300px;
+}
+.children-footer{
+    padding: 30px 30px;
+}
+.bg-item{
+    background: rgb(135, 204, 171);
+}
+.sub-title{
+    text-align: center;
+}
+h5{
+    font-size: 1rem;
+}
+.styletitle{
+    padding-top: 30px;
+}

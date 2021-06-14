@@ -1,0 +1,23 @@
+.progress{
+    background: #007bff;
+}
+.body-Oder{
+    border:1px solid #2A2A2A;
+    border-radius: 5px;
+}
+.sub-body-Oder{
+    padding: 30px 30px;
+}
+.oder-button{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 150px;
+}
+.sub-footer-oder{
+    padding: 50px 50px;
+    text-align: center;
+}
+.oder-button-sub{
+    padding: 30px 30px;
+    text-align: center;
+}

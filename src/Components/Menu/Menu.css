@@ -1,0 +1,22 @@
+
+.top-menu{
+    width: 100%;
+    background: url("https://s3.amazonaws.com/beatstarsdata/proweb/2.0/user-styles/uploads/published/49036/main_bg.jpg?_=1597359564");
+}
+.inner-header{
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+.custom-search{
+    padding: 100px 0;   
+}
+.input-group-prepend {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+.product{
+    text-align: center;
+}
