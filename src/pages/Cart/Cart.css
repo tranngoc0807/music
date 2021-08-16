@@ -1,0 +1,72 @@
+.wrapper{
+    padding: 70px 0px;
+    background:black;
+}
+h1{
+    font-size: 40px;
+    line-height: 50px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.top-cart{
+    text-align: center;
+    padding: 50px 0px
+}
+.body-cart{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+.left-body-cart{
+    width: 80%;
+}
+.sub-left-body-cart{
+    padding: 20px;
+    display: flex;
+}
+.sub-right-body-cart{
+    padding: 10px 0px;
+}
+.name-sub-left-body-cart{
+    display: flex;
+width: 70%;
+}
+.price-sub-left-body-cart{
+    width: 30%;
+    display: flex;
+}
+.custom-remove{
+    padding: 0px 50px;
+}
+.price-cart{
+    width: 100px;
+}
+.total-cart{
+    width: 100%;
+    display: flex;
+    padding: 10px 0px;
+    color: #00eb88;
+}
+.left-total-cart{
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+.right-total-cart{
+    width: 40%;
+    padding: 0px 85px;
+}
+.avata-cart{
+    width: 50px;
+    height: 50px;
+}
+.modal-footer{
+    padding-right: 50px;
+}
+.pay-cuts{
+    padding: 30px 120px 0px 0px;
+    display: flex;
+    justify-content: flex-end;
+}
+.title-cart{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}

@@ -1,8 +1,7 @@
-import { Component } from "react";
+
 import Footer from "../Components/Footer/Footer";
 import Menu from "../Components/Menu/Menu";
-class Home extends Component {
-  render() {
+function Home (props) {
     return (
       <div >
         <Menu/>
@@ -11,5 +10,4 @@ class Home extends Component {
       </div>
     );
   }
-}
 export default Home;

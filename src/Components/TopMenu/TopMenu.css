@@ -5,8 +5,13 @@
     width: 100%;
 }
 #logo-home{
+    cursor: pointer;
     width: 30%;
-    padding:  0px 10px 10px 0;
+    padding:  0px 0px 20px 30px;
+}
+.reload{
+    cursor: pointer;   
+    color: white;
 }
 ul {
     list-style: none;
@@ -27,10 +32,12 @@ ul {
     width: 100%;
     background: #070707;
     height: 70px;
-    z-index: 3;  
+    z-index: 4;  
   
 }
-
+.text-size{
+    font-size: 1rem;
+}
 .top-list{
     border-top: 20px;
     display: flex;
@@ -44,4 +51,34 @@ ul {
 }
 .dropdown-item{
     color: white;
+}
+.body-topmenu{
+    padding-bottom: 20px;
+}
+.cust-count{
+    
+    display: flex;
+   color: #fadb14;
+}
+.count{
+    /* top: 18px;
+    right: 202px; */
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+    color: white;
+}
+.buton-person-user{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-out{
+    display: none;
+    position: absolute;
+}
+.buton-person-user:hover .dropdown-out{
+    display:block;
 }

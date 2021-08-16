@@ -1,0 +1,41 @@
+.top-use-information{
+    padding: 50px;
+    font-size: 1.75rem;
+    text-align: center;
+}
+.information-use{
+    display: flex;
+    justify-content: center;
+}
+.body-use-information{
+    display: flex;
+    justify-content: center;
+}
+.sub-information-use{
+width: 60%;
+}
+.sub-body-use-information{
+    width: 100%;
+    background:#006d75;
+    padding: 20px 35px;
+}
+.top-sub-body-use-information{
+    display: flex;
+    width: 100%;
+    justify-content:space-between;
+    padding: 15px 0px;
+}
+.name-sub-body-use-information{
+    width: 48%;
+
+}
+.phone-sub-body-use-information{
+    width: 48%;
+}
+.footer-use{
+    padding: 50px 0px;
+    text-align: center;
+}
+.body-sub-body-use-information{
+    padding: 15px 0px;
+}

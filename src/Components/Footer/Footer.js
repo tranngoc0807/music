@@ -1,5 +1,6 @@
 import { Component } from "react";
 import "../Footer/Footer.css";
+import Youtube from "../../pages/youtube/Youtube";
 class Footer extends Component {
   render() {
     return (
@@ -19,13 +20,14 @@ class Footer extends Component {
         <div className="list-item">
           <div className="sub-item">
             <div className="styletitle">
-              <span>Non-Profit</span>
+              <h2>Non-Profit</h2>
             </div>
 
             <div style={{ padding: "20px 0px" }}>
               <div className="price">$33.99</div>
               <i>mỗi bản nhạc</i>
             </div>
+            <div className="text-custom">
             <h5>
               Sử dụng cá nhân <br />
               High-Quality MP3 (320kbps) <br />
@@ -51,16 +53,19 @@ class Footer extends Component {
               <br /> 2-years Term Duration
               <br />
             </h5>
+            </div>
+           
           </div>
           <div className="sub-item">
             <div className="styletitle">
-              <span>Monetization</span>
+              <h2>Monetization</h2>
             </div>
 
             <div style={{ padding: "20px 0px" }}>
               <div className="price">$66.99</div>
               <i>mỗi bản nhạc</i>
             </div>
+            <div className="text-custom">
             <h5>
               Sử dụng cá nhân <br />
               High-Quality MP3 (320kbps) <br />
@@ -87,16 +92,18 @@ class Footer extends Component {
               thời hạn 4 năm
               <br />
             </h5>
+            </div>
           </div>
-          <div className="sub-item">
+          <div className="sub-item" style={{background:'#e1192b'}}>
             <div className="styletitle">
-              <span>Streaming</span>
+              <h2>Streaming</h2>
             </div>
 
             <div style={{ padding: "20px 0px" }}>
               <div className="price">$149.99</div>
               <i>mỗi bản nhạc</i>
             </div>
+            <div className="text-custom">
             <h5>
               Sử dụng thương mại <br />
               High-Quality MP3 (320kbps) <br />
@@ -122,16 +129,18 @@ class Footer extends Component {
               <br /> Thời hạn 8 năm
               <br />
             </h5>
+            </div>
           </div>
           <div className="sub-item">
             <div className="styletitle">
-              <span>Unlimited</span>
+              <h2>Unlimited</h2>
             </div>
 
             <div style={{ padding: "20px 0px" }}>
               <div className="price">$249.99</div>
               <i>mỗi bản nhạc</i>
             </div>
+            <div className="text-custom">
             <h5>
               Sử dụng thương mại <br />
               High-Quality MP3 (320kbps) <br />
@@ -158,16 +167,18 @@ class Footer extends Component {
               <br /> 16-years Term Duration
               <br />
             </h5>
+            </div>
           </div>
           <div className="sub-item">
             <div className="styletitle">
-              <span>Inclusive</span>
+              <h2>Inclusive</h2>
             </div>
 
             <div style={{ padding: "20px 0px" }}>
               <div className="price">$499.99</div>
               <i>mỗi bản nhạc</i>
             </div>
+            <div className="text-custom">
             <h5>
               Sử dụng thương mại
               <br />
@@ -194,6 +205,7 @@ class Footer extends Component {
               <br /> 30-years Term Duration
               <br />
             </h5>
+            </div>
           </div>
         </div>
         <div className="footer-item">
@@ -236,6 +248,9 @@ class Footer extends Component {
             Tất cả doanh số bán hàng là cuối cùng và không được hoàn lại. Bằng
             cách mua, bạn đồng ý với các điều khoản này.
           </h6>
+        </div>
+        <div className="video-conten">
+          <Youtube/>
         </div>
       </div>
     );

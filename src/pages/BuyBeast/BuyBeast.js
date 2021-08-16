@@ -9,7 +9,7 @@ class BuyBeast extends Component {
           <div className="title">
             <button
               type="button"
-              class="btn btn-warning"
+              className="btn btn-warning"
               style={{ marginTop: 100, color: "#000" }}
             >
               ĐẶT HÀNG THỦ CÔNG
@@ -85,11 +85,11 @@ class BuyBeast extends Component {
 
                      <div className="row">
                             <div className="col-6 mb-3  mt-3 cust">
-                                <label htmlFor="exampleFormControlInput1" className="form-label">First Name</label>
+                                <label htmlFor="exampleFormControlInput1" className="form-label">1. Beat Title / Link</label>
                                 <input type="email" className="form-control"  placeholder="First Name" />
                             </div>   
                             <div className="col-6 mb-3 mt-3 cust ">
-                                <label for="exampleFormControlSelect1">Purchased from</label>
+                                <label htmlFor="exampleFormControlSelect1">1.1 License Type</label>
                                 <select className="form-control" >
                                 <option>Streming Unlimited</option>
                                 <option>Unlimited to Enterprise</option>
@@ -99,11 +99,11 @@ class BuyBeast extends Component {
                                 </select>
                             </div> 
                             <div className="col-6 mb-3  mt-3 cust">
-                                <label htmlFor="exampleFormControlInput1" className="form-label">First Name</label>
+                                <label htmlFor="exampleFormControlInput1" className="form-label">2. Beat Title / Link</label>
                                 <input type="email" className="form-control"  placeholder="First Name" />
                             </div>   
                             <div className="col-6 mb-3 mt-3 cust ">
-                                <label for="exampleFormControlSelect1">Purchased from</label>
+                                <label htmlFor="exampleFormControlSelect1">2.1 License Type</label>
                                 <select className="form-control" >
                                 <option>Streming Unlimited</option>
                                 <option>Unlimited to Enterprise</option>
@@ -113,11 +113,11 @@ class BuyBeast extends Component {
                                 </select>
                             </div> 
                             <div className="col-6 mb-3  mt-3 cust">
-                                <label htmlFor="exampleFormControlInput1" className="form-label">First Name</label>
+                                <label htmlFor="exampleFormControlInput1" className="form-label">3. Beat Title / Link</label>
                                 <input type="email" className="form-control"  placeholder="First Name" />
                             </div>   
                             <div className="col-6 mb-3 mt-3 cust ">
-                                <label for="exampleFormControlSelect1">Purchased from</label>
+                                <label htmlFor="exampleFormControlSelect1">3.1 License Type</label>
                                 <select className="form-control" >
                                 <option>Streming Unlimited</option>
                                 <option>Unlimited to Enterprise</option>
@@ -127,11 +127,11 @@ class BuyBeast extends Component {
                                 </select>
                             </div> 
                             <div className="col-6 mb-3  mt-3 cust">
-                                <label htmlFor="exampleFormControlInput1" className="form-label">First Name</label>
+                                <label htmlFor="exampleFormControlInput1" className="form-label">4. Beat Title / Link</label>
                                 <input type="email" className="form-control"  placeholder="First Name" />
                             </div>   
                             <div className="col-6 mb-3 mt-3 cust ">
-                                <label for="exampleFormControlSelect1">Purchased from</label>
+                                <label htmlFor="exampleFormControlSelect1">4.1 License Type</label>
                                 <select className="form-control" >
                                 <option>Streming Unlimited</option>
                                 <option>Unlimited to Enterprise</option>
@@ -141,11 +141,11 @@ class BuyBeast extends Component {
                                 </select>
                             </div> 
                             <div className="col-6 mb-3  mt-3 cust">
-                                <label htmlFor="exampleFormControlInput1" className="form-label">First Name</label>
+                                <label htmlFor="exampleFormControlInput1" className="form-label">5. Beat Title / Link</label>
                                 <input type="email" className="form-control"  placeholder="First Name" />
                             </div>   
                             <div className="col-6 mb-3 mt-3 cust ">
-                                <label for="exampleFormControlSelect1">Purchased from</label>
+                                <label htmlFor="exampleFormControlSelect1">Purchased from</label>
                                 <select className="form-control" >
                                 <option>Streming Unlimited</option>
                                 <option>Unlimited to Enterprise</option>
@@ -157,6 +157,7 @@ class BuyBeast extends Component {
                             <div className="table">
 
                                   <table>
+                                    <tbody>
                                       <tr>
                                           <td>Mục</td>
                                           <td>Gía Bán</td>
@@ -204,11 +205,12 @@ class BuyBeast extends Component {
                                           <td colSpan="3">Toàn Bộ</td>
                                           <td>$13.00</td>
                                       </tr>
+                                      </tbody>
                                   </table>
                             </div>
                             <div className="sub-button" >
                                 <Link to ="/Oder">
-                                <button type="button" class="btn btn-success  mt-3">KẾ TIẾP</button>
+                                <button type="button" className="btn btn-success  mt-3">KẾ TIẾP</button>
                                 </Link>
                              
                      </div>

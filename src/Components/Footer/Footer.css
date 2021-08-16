@@ -65,3 +65,12 @@ h5{
 .styletitle{
     padding-top: 30px;
 }
+.text-custom{
+    font-family: Poppins;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px
+}
+.video-conten{
+    padding: 50px 0px 50px 0px;
+}

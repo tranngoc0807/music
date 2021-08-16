@@ -1,7 +1,10 @@
 .login-wapper{
     width: 525px;
     height: auto;
-    padding-top:100px ;
+    padding: 150px 0px 50px 0px;
+}
+.Login{
+    background: black;
 }
 .body-signup{
     width: 100%;

@@ -14,4 +14,9 @@
 .custom .form-control{
     height: 50px;
     background: #2A2A2A;
+    color: #FFF;
+}
+.custom-example .form-control{
+    background: #2A2A2A;
+    height: 200px;
 }

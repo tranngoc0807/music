@@ -1,5 +1,4 @@
-svg{
-    padding-left:10px ;
+.cust-support{  
     width: 50px;
     height: 30px;
     color: yellowgreen;
@@ -21,4 +20,5 @@ svg{
 }
 .sub-title-mess{
     background: #fff;
+    padding-bottom: 20px;
 }
