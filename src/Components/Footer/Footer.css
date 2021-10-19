@@ -19,17 +19,19 @@
 .list-item{
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 40px 0;
-
-
 }
 .sub-item{
-   width: 19%;
-    text-align:center;
-  border: 1px solid #2A2A2A;
-  border-radius: 10px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+.sub-item-list{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #2A2A2A;
+    border-radius: 10px;
+    align-items: center;
 }
 .price{
     font-family: "Poppins", Sans-serif;
@@ -73,4 +75,9 @@ h5{
 }
 .video-conten{
     padding: 50px 0px 50px 0px;
+}
+@media (max-width:1200px) {
+    .sub-item{
+      color: yellow;
+    }
 }

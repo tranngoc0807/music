@@ -15,6 +15,7 @@ import SIGNUP from "./pages/Login/SIGNUP/SIGNUP";
 import Cart from "./pages/Cart/Cart";
 import Use from "./pages/Use/Use";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import logo from "../src/asset/img/logoproduct/logo1.png";
 export const GlobalContext = React.createContext({});
 export function App() {
   let [cart, setCart] = useState([]);
@@ -27,6 +28,7 @@ export function App() {
   return (
     <>
       <GlobalContext.Provider value={{ cart, setCart }}>
+      
         <Router>
           <div className="App">
             <TopMenu />

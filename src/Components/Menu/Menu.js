@@ -73,10 +73,10 @@ function Menu(props) {
     setTotalSelected(totalSelected.value === "");
   };
   //  add sản phẩm vào giỏ hàng
-  const addToCart = (product, price,pay) => {
-    const newProduct = { ...product, price};
+  const addToCart = (product, price, pay) => {
+    const newProduct = { ...product, price };
     setCart([...cart, newProduct]);
-    localStorage.setItem('cart',JSON.stringify([...cart, newProduct]))
+    localStorage.setItem("cart", JSON.stringify([...cart, newProduct]));
   };
 
   // lấy thông tin sản phẩm vừa chọn
@@ -232,9 +232,7 @@ function Menu(props) {
                         <span style={{ paddingLeft: "7px" }}>Gm</span>
                       </div>
                       <div className="style-sub-icon-information">
-                        <div>
-                          {showClock()}{" "}
-                        </div>
+                        <div>{showClock()} </div>
                         <span style={{ paddingLeft: "7px" }}>jun 23,2021</span>
                       </div>
                     </div>
@@ -275,182 +273,177 @@ function Menu(props) {
           </div>
         ) : null}
         <div className="product">
-          <div className="container">
-            <div className="detail"></div>
+          <div className="menu-product">
             <div className="list-product">
               <div style={{ paddingLeft: "20px" }}>
                 <table style={{ border: "0px" }}>
                   <tbody>
-                  {/* input giỏ hàng */}
-                  <tr>
-                    <td colSpan="5">
-                      <div className="top-cust-filter">
-                        <div className="filter-body">
-                          <Button
-                            id="PopoverClick"
-                            type="button"
-                            className="btn btn-dark cust-button-fiter"
-                          >
-                            Filter {showfiter()}
-                          </Button>
-                          <UncontrolledPopover
-                            trigger="click"
-                            placement="bottom"
-                            target="PopoverClick"
-                          >
-                            <PopoverHeader>Filter by:</PopoverHeader>
-                            <div className="cut-reset">
-                              <button
-                                className="cut-button-reset"
-                                onClick={() =>
-                                  handleResetFilter(
-                                    typeSelected,
-                                    bpmSelected,
-                                    totalSelected
-                                  )
-                                }
-                              >
-                                Reset Filter
-                              </button>
-                            </div>
+                    <tr>
+                      <td colSpan="5">
+                        <div className="top-cust-filter">
+                          <div className="filter-body">
+                            <Button
+                              id="PopoverClick"
+                              type="button"
+                              className="btn btn-dark cust-button-fiter"
+                            >
+                              Filter {showfiter()}
+                            </Button>
+                            <UncontrolledPopover
+                              trigger="click"
+                              placement="bottom"
+                              target="PopoverClick"
+                            >
+                              <PopoverHeader>Filter by:</PopoverHeader>
+                              <div className="cut-reset">
+                                <button
+                                  className="cut-button-reset"
+                                  onClick={() =>
+                                    handleResetFilter(
+                                      typeSelected,
+                                      bpmSelected,
+                                      totalSelected
+                                    )
+                                  }
+                                >
+                                  Reset Filter
+                                </button>
+                              </div>
 
-                            <div className="popoverheader">
-                              <div className="popoverbody">
-                                BPM :
-                                <Select
-                                  className="cust-popover-button"
-                                  value={bpmSelected}
-                                  options={bpmOptions}
-                                  onChange={(event) => {
-                                    setBpmSelected(event);
-                                  }}
-                                />
+                              <div className="popoverheader">
+                                <div className="popoverbody">
+                                  BPM :
+                                  <Select
+                                    className="cust-popover-button"
+                                    value={bpmSelected}
+                                    options={bpmOptions}
+                                    onChange={(event) => {
+                                      setBpmSelected(event);
+                                    }}
+                                  />
+                                </div>
+                                <div className="popoverbody">
+                                  Type :
+                                  <Select
+                                    className="cust-popover-button"
+                                    value={typeSelected}
+                                    options={typeOptions}
+                                    onChange={(e) => {
+                                      setTypeSelected(e);
+                                    }}
+                                  />
+                                </div>
+                                <div className="popoverbody">
+                                  Total :
+                                  <Select
+                                    className="cust-popover-button"
+                                    value={totalSelected}
+                                    options={totalOptions}
+                                    onChange={(e) => {
+                                      setTotalSelected(e);
+                                    }}
+                                  />
+                                </div>
                               </div>
-                              <div className="popoverbody">
-                                Type :
-                                <Select
-                                  className="cust-popover-button"
-                                  value={typeSelected}
-                                  options={typeOptions}
-                                  onChange={(e) => {
-                                    setTypeSelected(e);
-                                  }}
-                                />
-                              </div>
-                              <div className="popoverbody">
-                                Total :
-                                <Select
-                                  className="cust-popover-button"
-                                  value={totalSelected}
-                                  options={totalOptions}
-                                  onChange={(e) => {
-                                    setTotalSelected(e);
-                                  }}
-                                />
-                              </div>
-                            </div>
-                          </UncontrolledPopover>
+                            </UncontrolledPopover>
+                          </div>
                         </div>
-                      </div>
-                    </td>
-                  </tr>
-
-                  {/* thông tin toàn bộ sẩn phẩm */}
-                  <tr>
-                    <td>
-                      <div
-                        style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
-                      >
-                        <b>TITLE</b>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
-                      >
-                        <b>TIME</b>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
-                      >
-                        <b>BPM</b>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        style={{
-                          paddingBottom: "20px",
-                          paddingLeft: "20px",
-                          fontSize: "0.8rem",
-                        }}
-                      >
-                        <b>TAGS</b>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
-                      >
-                        <b>PRICE</b>
-                      </div>
-                    </td>
-                  </tr>
-
-                  {products.map((product, index) => (
-                    <tr
-                      style={{
-                        borderBottom: "1px solid white",
-                        height: "70px",
-                        cursor: "pointer",
-                      }}
-                      key={index}
-                    >
-                      <td style={{ paddingTop: "10px" }}>
-                        <span >
-                          <img
-                            alt=""
-                            src={product.url_image}
-                            className="style-img-product"
-                            onClick={() => handleClick(product)}
-                          ></img>
-                        </span>{" "}
-                        <span style={{ paddingLeft: "10px" }}>
-                          {product.title}
-                        </span>
                       </td>
-                      <td style={{ paddingRight: "30px" }}>{product.time}</td>
-                      <td>{product.bpm}</td>
-                      <td style={{ paddingLeft: "20px" }}>
-                        {product.tags.map((tag,index) => (
-                          <span style={{ paddingLeft: "5px" }} key={index}>{tag.name}</span>
-                        ))}
+                    </tr>
+                    <tr>
+                      <td>
+                        <div
+                          style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
+                        >
+                          <b>TITLE</b>
+                        </div>
                       </td>
                       <td>
-                        {/* Button trigger modal */}
-                        <button
-                          className="btn btn-danger"
-                          data-bs-toggle="modal"
-                          href="#exampleModalToggle"
-                          style={{ width: "100px", background: "#e1192b" }}
-                          onClick={() => handleChange(product)}
+                        <div
+                          style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
                         >
-                          <div className="button-price">
-                            <div>{showcart()}</div>
-                            <div style={{ paddingLeft: "2px" }}>
-                              {product.prices[0].value}$
-                            </div>
-                          </div>
-                        </button>
+                          <b>TIME</b>
+                        </div>
                       </td>
-                      {/* <hr /> */}
+                      <td>
+                        <div
+                          style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
+                        >
+                          <b>BPM</b>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          style={{
+                            paddingBottom: "20px",
+                            paddingLeft: "20px",
+                            fontSize: "0.8rem",
+                          }}
+                        >
+                          <b>TAGS</b>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
+                        >
+                          <b>PRICE</b>
+                        </div>
+                      </td>
                     </tr>
-                  ))}
+
+                    {products.map((product, index) => (
+                      <tr
+                        style={{
+                          borderBottom: "1px solid white",
+                          height: "70px",
+                          cursor: "pointer",
+                        }}
+                        key={index}
+                      >
+                        <td style={{ paddingTop: "10px" }}>
+                          <span>
+                            <img
+                              alt=""
+                              src={product.url_image}
+                              className="style-img-product"
+                              onClick={() => handleClick(product)}
+                            ></img>
+                          </span>{" "}
+                          <span style={{ paddingLeft: "10px" }}>
+                            {product.title}
+                          </span>
+                        </td>
+                        <td style={{ paddingRight: "30px" }}>{product.time}</td>
+                        <td>{product.bpm}</td>
+                        <td style={{ paddingLeft: "20px" }}>
+                          {product.tags.map((tag, index) => (
+                            <span style={{ paddingLeft: "5px" }} key={index}>
+                              {tag.name}
+                            </span>
+                          ))}
+                        </td>
+                        <td>
+                          <button
+                            className="btn btn-danger"
+                            data-bs-toggle="modal"
+                            href="#exampleModalToggle"
+                            style={{ width: "100px", background: "#e1192b" }}
+                            onClick={() => handleChange(product)}
+                          >
+                            <div className="button-price">
+                              <div>{showcart()}</div>
+                              <div style={{ paddingLeft: "2px" }}>
+                                {product.prices[0].value}$
+                              </div>
+                            </div>
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
                 <div>
-                  {/* Modal */}
                   <div>
                     <div
                       className="modal fade"
@@ -501,7 +494,7 @@ function Menu(props) {
                               <div className="body-right">
                                 <div className="choose-price">
                                   {product.prices && product.prices.length > 0
-                                    ? product.prices.map((item,index) => (
+                                    ? product.prices.map((item, index) => (
                                         <div className="sub-choose-price">
                                           <div className="left-choose-price">
                                             <h4

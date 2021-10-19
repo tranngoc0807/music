@@ -6,11 +6,13 @@ function Youtube(props) {
   return (
     <div className="body-youtube">
       <div className="sub-body-youtube">
-        <div className="sub-home-body-youtybe">
-          <div className="sub-home-body-youtybe-left">
-            <div className="sub-home-body-youtybe-left-chil">
+        <div className="sub-home-body-youtube">
+          <div className="sub-home-body-youtube-left">
+            <div className="sub-home-body-youtube-left-chil">
               <div className="image-body-youtube">
-                <img src={Logo3} style={{ width: "100%" }} alt="/" />
+                <div className="image-body-size-youtube">
+                  <img src={Logo3} style={{ width: "100%" }} alt="/" />
+                </div>
               </div>
               <div style={{ paddingLeft: "20px" }}>
                 <span>Trần Ngọc</span>
@@ -18,9 +20,11 @@ function Youtube(props) {
                 <span>847,000 subscribers</span>
               </div>
             </div>
-            <div className="sub-home-body-youtybe-left-chil">
+            <div className="sub-home-body-youtube-left-chil">
               <div className="image-body-youtube">
-                <div className="image-body-youtube-eye">{showEye()}</div>
+                <div className="image-body-youtube-eye">
+                  <div className="image-body-size-youtube bot"> {showEye()}</div>
+                </div>
               </div>
               <div style={{ paddingLeft: "20px" }}>
                 <span>Total views</span>
@@ -28,9 +32,11 @@ function Youtube(props) {
                 <span>208,513,300</span>
               </div>
             </div>
-            <div className="sub-home-body-youtybe-left-chil">
+            <div className="sub-home-body-youtube-left-chil">
               <div className="image-body-youtube">
-                <div className="image-body-youtube-eye">{showCamera()}</div>
+                <div className="image-body-youtube-eye">
+                  <div className="image-body-size-youtube bot"> {showCamera()}</div>
+                </div>
               </div>
               <div style={{ paddingLeft: "20px" }}>
                 <span>Video</span>
@@ -38,17 +44,24 @@ function Youtube(props) {
                 <span>1,400</span>
               </div>
             </div>
-            <div className="sub-home-body-youtybe-left-chil" style={{paddingLeft:'20px',paddingTop:'20px'}}>
+            <div
+              className="sub-home-body-youtube-left-chil"
+              style={{ paddingLeft: "20px", paddingTop: "20px" }}
+            >
               <a href="https://www.youtube.com/channel/UC0UgHl6U5wSCszY2-uB8syQ">
-                <button type="button" className="btn btn-danger " style={{background:'#e1192b'}}>
+                <button
+                  type="button"
+                  className="btn btn-danger "
+                  style={{ background: "#e1192b" }}
+                >
                   {showYoutube()} Subscibe
                 </button>
               </a>
             </div>
           </div>
-          <div className="sub-home-body-youtybe-right">
+          <div className="sub-home-body-youtube-right">
             <iframe
-              width="560"
+              width="100%"
               height="315"
               src="https://www.youtube.com/embed/3gous8qqMlU"
               title="YouTube video player"

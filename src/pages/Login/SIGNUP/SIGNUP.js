@@ -32,7 +32,7 @@ function SIGNUP(props) {
         "https://sale-beat.herokuapp.com/sign-up",
         signup
       );
-      if (register.data==="Email already existed!") {
+      if (register.data === "Email already existed!") {
         toast.error(" Tài khoản đã tồn tại!", {
           position: "top-center",
           autoClose: 3000,

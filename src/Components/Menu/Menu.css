@@ -1,7 +1,7 @@
 
 .wrapper-menu{
     background-color: black;
-    background:url("https://www.thaibeats.com/wp-content/uploads/2020/09/thaibeats-img-scaled.jpg");
+    background:url("../../asset/img/background.jpg");
     background-size: auto;
     background-position: center center;
     background-repeat: no-repeat;
@@ -9,7 +9,13 @@
 }
 .top-menu{
  width: 100%;
- background-color: rgba(7, 7, 7, 0.5);
+ background-color: rgba(7, 7, 7, 0.7);
+}
+.menu-product{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
 }
 .inner-header{
     display: flex;
@@ -25,13 +31,13 @@
     transform: translateY(-50%);
   }
 .list-product{
+    width: 90%;
     background: black;
     border-radius: 10px;
     padding: 30px 20px;
 }
 .modal-content{
     background: black;
-    /* background: url("https://dbk.vn/uploads/ckfinder/images/1-content/background-dep-45.jpg"); */
     background-size: auto;
     background-position: center center;
     background-repeat: no-repeat;
@@ -254,6 +260,7 @@ width:40px ;
 height: 40px;
 }
 .product{
+    width: 100%;
     padding-bottom: 50px;
     padding-top: 100px;
 }
