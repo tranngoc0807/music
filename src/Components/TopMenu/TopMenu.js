@@ -27,7 +27,7 @@ function TopMenu(props) {
     if (localStorage.getItem("token") === null) {
       return (
         <Link to="/Login" className="nav-link">
-          <div style={{ display: "flex" }}>
+          <div className="logo-login" style={{ display: "flex" }}>
             <div>{showLogin()}</div>
             <div>
               <b className="text-size" style={{ paddingLeft: "5px" }}>
@@ -47,7 +47,7 @@ function TopMenu(props) {
             <div className="dropdown-out" style={{ paddingTop: "10px" }}>
               <button
                 type="button"
-                className="btn btn-secondary"
+                className="btn btn-secondary "
                 onClick={handleDeleteToken}
               >
                 Đăng xuất
@@ -55,7 +55,7 @@ function TopMenu(props) {
             </div>
           </div>
 
-          <div style={{ paddingLeft: "8px" }}>
+          <div className="color-signout" style={{ paddingLeft: "8px" }}>
             {localStorage.getItem("username")}
           </div>
         </div>
@@ -117,7 +117,7 @@ function TopMenu(props) {
                   </li>
                   <li className="nav-item dropdown">
                     <a
-                      className="nav-link dropdown-toggle"
+                      className="nav-link dropdown-toggle "
                       href="#"
                       id="navbarDropdown"
                       role="button"
@@ -127,7 +127,7 @@ function TopMenu(props) {
                       <b className="text-size">Service</b>
                     </a>
                     <ul
-                      className="dropdown-menu"
+                      className="dropdown-menu custom-dropdown"
                       aria-labelledby="navbarDropdown"
                     >
                       <Link to="/Customize" className="nav-link">
@@ -163,8 +163,8 @@ function TopMenu(props) {
                     <button
                       variant="contained"
                       color="primary"
-                      className="btn "
-                      style={{ background: "black" }}
+                      className="btn  count-cart"
+                      // style={{ background: "black" }}
                       onClick={handleCheckCart}
                     >
                       <div className="cust-count">
@@ -177,7 +177,7 @@ function TopMenu(props) {
                     </button>
                   </li>
                   <li style={{ borderLeft: "1px solid white" }}>
-                    {renderLogin()}
+                    <div >{renderLogin()}</div>
                   </li>
                 </ul>
               </div>

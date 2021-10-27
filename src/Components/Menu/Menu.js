@@ -1,6 +1,7 @@
 import "../Menu/Menu.css";
 import React from "react";
 import { useState, useEffect } from "react";
+import { Spin } from "antd";
 import axios from "axios";
 import {
   showcart,
@@ -25,6 +26,7 @@ function Menu(props) {
   const [bpmSelected, setBpmSelected] = useState({});
   const [totalSelected, setTotalSelected] = useState({});
   const [search, setSearch] = useState("");
+  const [isLoading, setIsloading] = useState(false);
 
   const getData = async () => {
     try {
@@ -35,7 +37,14 @@ function Menu(props) {
   };
 
   useEffect(async () => {
-    getData();
+    const token = localStorage.getItem('token');
+    if (!token) {
+      props.history.push('/login');
+      return;
+    }
+    setIsloading(true);
+    await getData();
+    setIsloading(false);
   }, []);
 
   // điều kiện để search item
@@ -175,8 +184,8 @@ function Menu(props) {
         <div className="inner-header">
           {/* input search */}
           <div className="custom-search">
-            <nav className="navbar navbar-ligh">
-              <form>
+            <nav className="navbar navbar-ligh size-search">
+              <form style={{width:'80%'}}>
                 <div className="input-group mb-3">
                   <input
                     type="text"
@@ -186,7 +195,6 @@ function Menu(props) {
                     onChange={(e) => {
                       setSearch(e.target.value);
                     }}
-                    style={{ width: "550px", height: "70px" }}
                   />
                   <div className="input-group-append">
                     <button
@@ -205,7 +213,7 @@ function Menu(props) {
         </div>
         {/* Thông tin chi tiết sản phẩm đang chọn */}
         {!isEmpty(list) ? (
-          <div className="container">
+          <div className="container show-media">
             <div className="detair">
               <div className="sub-detair">
                 <div className="chil-sub-detair">
@@ -276,6 +284,11 @@ function Menu(props) {
           <div className="menu-product">
             <div className="list-product">
               <div style={{ paddingLeft: "20px" }}>
+                {isLoading ?  (
+                <div className="loading">
+                  <Spin />
+                </div>
+                ) : (
                 <table style={{ border: "0px" }}>
                   <tbody>
                     <tr>
@@ -358,21 +371,21 @@ function Menu(props) {
                           <b>TITLE</b>
                         </div>
                       </td>
-                      <td>
+                      <td className="test">
                         <div
                           style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
                         >
                           <b>TIME</b>
                         </div>
                       </td>
-                      <td>
+                      <td className="test">
                         <div
                           style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
                         >
                           <b>BPM</b>
                         </div>
                       </td>
-                      <td>
+                      <td className="test">
                         <div
                           style={{
                             paddingBottom: "20px",
@@ -414,9 +427,9 @@ function Menu(props) {
                             {product.title}
                           </span>
                         </td>
-                        <td style={{ paddingRight: "30px" }}>{product.time}</td>
-                        <td>{product.bpm}</td>
-                        <td style={{ paddingLeft: "20px" }}>
+                        <td className="test" style={{ paddingRight: "30px" }}>{product.time}</td>
+                        <td className="test">{product.bpm}</td>
+                        <td  className="test" style={{ paddingLeft: "20px" }}>
                           {product.tags.map((tag, index) => (
                             <span style={{ paddingLeft: "5px" }} key={index}>
                               {tag.name}
@@ -443,6 +456,7 @@ function Menu(props) {
                     ))}
                   </tbody>
                 </table>
+                )}
                 <div>
                   <div>
                     <div
@@ -561,7 +575,6 @@ function Menu(props) {
                                           data-bs-dismiss="modal"
                                           className="negotiate"
                                         >
-                                          {" "}
                                           Negotiate the price
                                         </div>
                                       </div>

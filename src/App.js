@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import 'antd/dist/antd.css';
 import Footer from "./Components/Footer/Footer";
 import Home from "./pages/Home";
 import TopMenu from "./Components/TopMenu/TopMenu";
@@ -15,8 +16,8 @@ import SIGNUP from "./pages/Login/SIGNUP/SIGNUP";
 import Cart from "./pages/Cart/Cart";
 import Use from "./pages/Use/Use";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import logo from "../src/asset/img/logoproduct/logo1.png";
 export const GlobalContext = React.createContext({});
+
 export function App() {
   let [cart, setCart] = useState([]);
   useEffect(() => {

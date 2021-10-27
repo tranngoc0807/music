@@ -51,6 +51,9 @@ ul {
     color: white;
     padding: 15px 0;
 }
+.count-cart{
+	background: black;
+}
 .dropdown-menu{
     background: rgb(6, 14, 36);
 }
@@ -61,9 +64,11 @@ ul {
     padding-bottom: 20px;
 }
 .cust-count{
-    
     display: flex;
    color: #fadb14;
+}
+.logo-login{
+	color: white;
 }
 .count{
 
@@ -93,4 +98,24 @@ ul {
     .text-size{
         color:tomato;
     }
+    .custom-dropdown{
+        background: white;
+        font-weight: 600;   
+    }
+		.count-cart{
+			background: white;
+		}
+		.cust-count{
+			color: tomato;
+		}
+		.count{
+			background: blue;
+		}
+		.logo-login{
+			color: tomato;
+		}
+		.color-signout{
+			color: tomato;
+			font-weight: 900;
+		}
 }

@@ -5,7 +5,6 @@ class Footer extends Component {
   render() {
     return (
       <div className="wrapper">
-        {/* <hr/> */}
         <div className="title">
           <div className="top-title">
             Tìm giấy phép hoàn hảo cho dự án của bạn.
@@ -18,87 +17,87 @@ class Footer extends Component {
           </div>
         </div>
         <div className="list-item">
-          <div className="sub-item">
-            <div className="sub-item-list">
-              <div className="styletitle">
-                <h2>Non-Profit</h2>
+          <div className="menu-list-item">
+            <div className="sub-item">
+              <div className="sub-item-list">
+                <div className="styletitle">
+                  <h2>Non-Profit</h2>
+                </div>
+                <div style={{ padding: "20px 0px" }}>
+                  <div className="price">$33.99</div>
+                  <i>mỗi bản nhạc</i>
+                </div>
+                <div className="text-custom">
+                  <h5>
+                    Sử dụng cá nhân <br />
+                    High-Quality MP3 (320kbps) <br />
+                    Standard WAV (16-bit)
+                    <br />
+                    Stems Files
+                    <br /> 1 Bài hát / Dự án
+                    <br /> 1 Video
+                    <br /> 200,000 Non-monetize Views
+                    <br />
+                    2 Performances Rights <br />2 Broadcasting Rights
+                    <br /> $1 Revenue Limits
+                    <br />
+                    Share publishing
+                    <br /> with producer (30%)
+                    <br /> The producer retained the
+                    <br />
+                    Beat ownership
+                    <br /> Đăng ký âm nhạc <br />
+                    (ví dụ: ASCAP, BMI, PRS, PROs)
+                    <br /> Sử dụng đồng bộ hóa
+                    <br /> Đăng ký Content-ID
+                    <br /> 2-years Term Duration
+                    <br />
+                  </h5>
+                </div>
               </div>
-
-              <div style={{ padding: "20px 0px" }}>
-                <div className="price">$33.99</div>
-                <i>mỗi bản nhạc</i>
-              </div>
-              <div className="text-custom">
-                <h5>
-                  Sử dụng cá nhân <br />
-                  High-Quality MP3 (320kbps) <br />
-                  Standard WAV (16-bit)
-                  <br />
-                  Stems Files
-                  <br /> 1 Bài hát / Dự án
-                  <br /> 1 Video
-                  <br /> 200,000 Non-monetize Views
-                  <br />
-                  2 Performances Rights <br />2 Broadcasting Rights
-                  <br /> $1 Revenue Limits
-                  <br />
-                  Share publishing
-                  <br /> with producer (30%)
-                  <br /> The producer retained the
-                  <br />
-                  Beat ownership
-                  <br /> Đăng ký âm nhạc <br />
-                  (ví dụ: ASCAP, BMI, PRS, PROs)
-                  <br /> Sử dụng đồng bộ hóa
-                  <br /> Đăng ký Content-ID
-                  <br /> 2-years Term Duration
-                  <br />
-                </h5>
+            </div>
+            <div className="sub-item">
+              <div className="sub-item-list">
+                <div className="styletitle">
+                  <h2>Monetization</h2>
+                </div>
+                <div style={{ padding: "20px 0px" }}>
+                  <div className="price">$66.99</div>
+                  <i>mỗi bản nhạc</i>
+                </div>
+                <div className="text-custom">
+                  <h5>
+                    Sử dụng cá nhân <br />
+                    High-Quality MP3 (320kbps) <br />
+                    Standard WAV (24-bit)
+                    <br />
+                    Stems Files
+                    <br /> 1 Bài hát / Dự án
+                    <br /> 4 Video
+                    <br /> 500,000 Non-monetize Views
+                    <br />
+                    2 Performances Rights <br />2 Broadcasting Rights
+                    <br /> $1 Revenue Limits
+                    <br />
+                    Share publishing
+                    <br /> with producer (20%)
+                    <br /> The producer retained the
+                    <br />
+                    Beat ownership
+                    <br /> Đăng ký âm nhạc <br />
+                    (ví dụ: ASCAP, BMI, PRS, PROs)
+                    <br /> Sử dụng đồng bộ hóa
+                    <br /> Đăng ký Content-ID
+                    <br />
+                    thời hạn 4 năm
+                    <br />
+                  </h5>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="sub-item">
-            <div className="sub-item-list">
-              <div className="styletitle">
-                <h2>Monetization</h2>
-              </div>
-
-              <div style={{ padding: "20px 0px" }}>
-                <div className="price">$66.99</div>
-                <i>mỗi bản nhạc</i>
-              </div>
-              <div className="text-custom">
-                <h5>
-                  Sử dụng cá nhân <br />
-                  High-Quality MP3 (320kbps) <br />
-                  Standard WAV (24-bit)
-                  <br />
-                  Stems Files
-                  <br /> 1 Bài hát / Dự án
-                  <br /> 4 Video
-                  <br /> 500,000 Non-monetize Views
-                  <br />
-                  2 Performances Rights <br />2 Broadcasting Rights
-                  <br /> $1 Revenue Limits
-                  <br />
-                  Share publishing
-                  <br /> with producer (20%)
-                  <br /> The producer retained the
-                  <br />
-                  Beat ownership
-                  <br /> Đăng ký âm nhạc <br />
-                  (ví dụ: ASCAP, BMI, PRS, PROs)
-                  <br /> Sử dụng đồng bộ hóa
-                  <br /> Đăng ký Content-ID
-                  <br />
-                  thời hạn 4 năm
-                  <br />
-                </h5>
-              </div>
-            </div>
-          </div>
-          <div className="sub-item">
+          <div className="sub-item1">
             <div className="sub-item-list" style={{ background: "#e1192b" }}>
               <div className="styletitle">
                 <h2>Streaming</h2>
@@ -137,6 +136,7 @@ class Footer extends Component {
               </div>
             </div>
           </div>
+          <div className="menu-list-item">
           <div className="sub-item">
             <div className="sub-item-list">
               <div className="styletitle">
@@ -217,6 +217,7 @@ class Footer extends Component {
               </div>
             </div>
           </div>
+          </div>
         </div>
         <div className="footer-item">
           <div className="sub-footer-item">
@@ -239,8 +240,8 @@ class Footer extends Component {
               </h5>
             </div>
           </div>
-          <div className="sub-footer-item bg-item">
-            <div className="children-footer ">
+          <div className="sub-footer-item ">
+            <div className="children-footer  bg-item">
               <span>Compare All Licenses</span>
               <h5 style={{ padding: "20px 0" }}>
                 See all of our pricing/license options and features in more
@@ -261,7 +262,7 @@ class Footer extends Component {
             cách mua, bạn đồng ý với các điều khoản này.
           </h6>
         </div>
-        <div className="video-conten">
+        <div className="video-content">
           <Youtube />
         </div>
       </div>

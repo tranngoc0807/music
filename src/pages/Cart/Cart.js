@@ -16,7 +16,7 @@ function Cart(props) {
 
   // tổng giá tiền trước khi discount
   const total = cart
-    .reduce((total, thing) => total + thing.price.value, 0)
+.reduce((total, thing) => total + thing.price.value, 0)
     .toFixed(2);
   // giá sale
   let discount = 0;
