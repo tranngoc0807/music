@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./App.css";
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 import Footer from "./Components/Footer/Footer";
 import Home from "./pages/Home";
 import TopMenu from "./Components/TopMenu/TopMenu";
@@ -15,13 +16,19 @@ import Login from "./pages/Login/Login";
 import SIGNUP from "./pages/Login/SIGNUP/SIGNUP";
 import Cart from "./pages/Cart/Cart";
 import Use from "./pages/Use/Use";
+// import authHoc from "./hocs/authHoc";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 export const GlobalContext = React.createContext({});
 
 export function App() {
+  const token = localStorage.getItem("token");
+  const isLoginPage = window.location.pathname === "/Login";
   let [cart, setCart] = useState([]);
   useEffect(() => {
     const curreltCart = JSON.parse(localStorage.getItem("cart"));
+
+    if (!token && !isLoginPage) window.location.href = "/Login";
+
     if (curreltCart) {
       setCart(curreltCart);
     }
@@ -29,7 +36,6 @@ export function App() {
   return (
     <>
       <GlobalContext.Provider value={{ cart, setCart }}>
-      
         <Router>
           <div className="App">
             <TopMenu />
@@ -64,7 +70,6 @@ export function App() {
               <Route path="/BuyBeast" exact={true}>
                 <BuyBeast />
               </Route>
-
               <Route path="/Oder" exact={true}>
                 <Oder />
               </Route>

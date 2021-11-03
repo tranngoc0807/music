@@ -15,3 +15,12 @@
     height: 50px;
     background: #2A2A2A;
 }
+@media (max-width:768px) {
+      .col-6{
+          width: 100%;
+      }
+      .sub-body-contact {
+		padding: 0px;
+	}
+ }
+ 

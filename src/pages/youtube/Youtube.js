@@ -14,7 +14,7 @@ function Youtube(props) {
                   <img src={Logo3} style={{ width: "100%" }} alt="/" />
                 </div>
               </div>
-              <div style={{ paddingLeft: "20px" }}>
+              <div className="footer-views-youtube" >
                 <span>Trần Ngọc</span>
                 <br />
                 <span>847,000 subscribers</span>
@@ -26,7 +26,7 @@ function Youtube(props) {
                   <div className="image-body-size-youtube bot"> {showEye()}</div>
                 </div>
               </div>
-              <div style={{ paddingLeft: "20px" }}>
+              <div className="footer-views-youtube">
                 <span>Total views</span>
                 <br />
                 <span>208,513,300</span>
@@ -38,7 +38,7 @@ function Youtube(props) {
                   <div className="image-body-size-youtube bot"> {showCamera()}</div>
                 </div>
               </div>
-              <div style={{ paddingLeft: "20px" }}>
+              <div className="footer-views-youtube">
                 <span>Video</span>
                 <br />
                 <span>1,400</span>

@@ -37,11 +37,11 @@ function Menu(props) {
   };
 
   useEffect(async () => {
-    const token = localStorage.getItem('token');
-    if (!token) {
-      props.history.push('/login');
-      return;
-    }
+    // const token = localStorage.getItem("token");
+    // if (!token) {
+    //   props.history.push("/login");
+    //   return;
+    // }
     setIsloading(true);
     await getData();
     setIsloading(false);
@@ -185,7 +185,7 @@ function Menu(props) {
           {/* input search */}
           <div className="custom-search">
             <nav className="navbar navbar-ligh size-search">
-              <form style={{width:'80%'}}>
+              <form style={{ width: "80%" }}>
                 <div className="input-group mb-3">
                   <input
                     type="text"
@@ -283,179 +283,193 @@ function Menu(props) {
         <div className="product">
           <div className="menu-product">
             <div className="list-product">
-              <div style={{ paddingLeft: "20px" }}>
-                {isLoading ?  (
-                <div className="loading">
-                  <Spin />
-                </div>
+              <div>
+                {isLoading ? (
+                  <div className="loading">
+                    <Spin size="large" />
+                  </div>
                 ) : (
-                <table style={{ border: "0px" }}>
-                  <tbody>
-                    <tr>
-                      <td colSpan="5">
-                        <div className="top-cust-filter">
-                          <div className="filter-body">
-                            <Button
-                              id="PopoverClick"
-                              type="button"
-                              className="btn btn-dark cust-button-fiter"
-                            >
-                              Filter {showfiter()}
-                            </Button>
-                            <UncontrolledPopover
-                              trigger="click"
-                              placement="bottom"
-                              target="PopoverClick"
-                            >
-                              <PopoverHeader>Filter by:</PopoverHeader>
-                              <div className="cut-reset">
-                                <button
-                                  className="cut-button-reset"
-                                  onClick={() =>
-                                    handleResetFilter(
-                                      typeSelected,
-                                      bpmSelected,
-                                      totalSelected
-                                    )
-                                  }
-                                >
-                                  Reset Filter
-                                </button>
-                              </div>
+                  <table style={{ border: "0px" }}>
+                    <tbody>
+                      <tr>
+                        <td colSpan="5">
+                          <div className="top-cust-filter">
+                            <div className="filter-body">
+                              <Button
+                                id="PopoverClick"
+                                type="button"
+                                className="btn btn-dark cust-button-fiter"
+                              >
+                                Filter {showfiter()}
+                              </Button>
+                              <UncontrolledPopover
+                                trigger="click"
+                                placement="bottom"
+                                target="PopoverClick"
+                              >
+                                <PopoverHeader>Filter by:</PopoverHeader>
+                                <div className="cut-reset">
+                                  <button
+                                    className="cut-button-reset"
+                                    onClick={() =>
+                                      handleResetFilter(
+                                        typeSelected,
+                                        bpmSelected,
+                                        totalSelected
+                                      )
+                                    }
+                                  >
+                                    Reset Filter
+                                  </button>
+                                </div>
 
-                              <div className="popoverheader">
-                                <div className="popoverbody">
-                                  BPM :
-                                  <Select
-                                    className="cust-popover-button"
-                                    value={bpmSelected}
-                                    options={bpmOptions}
-                                    onChange={(event) => {
-                                      setBpmSelected(event);
-                                    }}
-                                  />
+                                <div className="popoverheader">
+                                  <div className="popoverbody">
+                                    BPM :
+                                    <Select
+                                      className="cust-popover-button"
+                                      value={bpmSelected}
+                                      options={bpmOptions}
+                                      onChange={(event) => {
+                                        setBpmSelected(event);
+                                      }}
+                                    />
+                                  </div>
+                                  <div className="popoverbody">
+                                    Type :
+                                    <Select
+                                      className="cust-popover-button"
+                                      value={typeSelected}
+                                      options={typeOptions}
+                                      onChange={(e) => {
+                                        setTypeSelected(e);
+                                      }}
+                                    />
+                                  </div>
+                                  <div className="popoverbody">
+                                    Total :
+                                    <Select
+                                      className="cust-popover-button"
+                                      value={totalSelected}
+                                      options={totalOptions}
+                                      onChange={(e) => {
+                                        setTotalSelected(e);
+                                      }}
+                                    />
+                                  </div>
                                 </div>
-                                <div className="popoverbody">
-                                  Type :
-                                  <Select
-                                    className="cust-popover-button"
-                                    value={typeSelected}
-                                    options={typeOptions}
-                                    onChange={(e) => {
-                                      setTypeSelected(e);
-                                    }}
-                                  />
-                                </div>
-                                <div className="popoverbody">
-                                  Total :
-                                  <Select
-                                    className="cust-popover-button"
-                                    value={totalSelected}
-                                    options={totalOptions}
-                                    onChange={(e) => {
-                                      setTotalSelected(e);
-                                    }}
-                                  />
-                                </div>
-                              </div>
-                            </UncontrolledPopover>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div
-                          style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
-                        >
-                          <b>TITLE</b>
-                        </div>
-                      </td>
-                      <td className="test">
-                        <div
-                          style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
-                        >
-                          <b>TIME</b>
-                        </div>
-                      </td>
-                      <td className="test">
-                        <div
-                          style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
-                        >
-                          <b>BPM</b>
-                        </div>
-                      </td>
-                      <td className="test">
-                        <div
-                          style={{
-                            paddingBottom: "20px",
-                            paddingLeft: "20px",
-                            fontSize: "0.8rem",
-                          }}
-                        >
-                          <b>TAGS</b>
-                        </div>
-                      </td>
-                      <td>
-                        <div
-                          style={{ paddingBottom: "20px", fontSize: "0.8rem" }}
-                        >
-                          <b>PRICE</b>
-                        </div>
-                      </td>
-                    </tr>
-
-                    {products.map((product, index) => (
-                      <tr
-                        style={{
-                          borderBottom: "1px solid white",
-                          height: "70px",
-                          cursor: "pointer",
-                        }}
-                        key={index}
-                      >
-                        <td style={{ paddingTop: "10px" }}>
-                          <span>
-                            <img
-                              alt=""
-                              src={product.url_image}
-                              className="style-img-product"
-                              onClick={() => handleClick(product)}
-                            ></img>
-                          </span>{" "}
-                          <span style={{ paddingLeft: "10px" }}>
-                            {product.title}
-                          </span>
-                        </td>
-                        <td className="test" style={{ paddingRight: "30px" }}>{product.time}</td>
-                        <td className="test">{product.bpm}</td>
-                        <td  className="test" style={{ paddingLeft: "20px" }}>
-                          {product.tags.map((tag, index) => (
-                            <span style={{ paddingLeft: "5px" }} key={index}>
-                              {tag.name}
-                            </span>
-                          ))}
-                        </td>
-                        <td>
-                          <button
-                            className="btn btn-danger"
-                            data-bs-toggle="modal"
-                            href="#exampleModalToggle"
-                            style={{ width: "100px", background: "#e1192b" }}
-                            onClick={() => handleChange(product)}
-                          >
-                            <div className="button-price">
-                              <div>{showcart()}</div>
-                              <div style={{ paddingLeft: "2px" }}>
-                                {product.prices[0].value}$
-                              </div>
+                              </UncontrolledPopover>
                             </div>
-                          </button>
+                          </div>
                         </td>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                      <tr>
+                        <td>
+                          <div
+                            style={{
+                              paddingBottom: "20px",
+                              fontSize: "0.8rem",
+                            }}
+                          >
+                            <b>TITLE</b>
+                          </div>
+                        </td>
+                        <td className="test">
+                          <div
+                            style={{
+                              paddingBottom: "20px",
+                              fontSize: "0.8rem",
+                            }}
+                          >
+                            <b>TIME</b>
+                          </div>
+                        </td>
+                        <td className="test">
+                          <div
+                            style={{
+                              paddingBottom: "20px",
+                              fontSize: "0.8rem",
+                            }}
+                          >
+                            <b>BPM</b>
+                          </div>
+                        </td>
+                        <td className="test">
+                          <div
+                            style={{
+                              paddingBottom: "20px",
+                              paddingLeft: "20px",
+                              fontSize: "0.8rem",
+                            }}
+                          >
+                            <b>TAGS</b>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            style={{
+                              paddingBottom: "20px",
+                              fontSize: "0.8rem",
+                            }}
+                          >
+                            <b>PRICE</b>
+                          </div>
+                        </td>
+                      </tr>
+
+                      {products.map((product, index) => (
+                        <tr
+                          style={{
+                            borderBottom: "1px solid white",
+                            height: "70px",
+                            cursor: "pointer",
+                          }}
+                          key={index}
+                        >
+                          <td style={{ paddingTop: "10px" }}>
+                            <span>
+                              <img
+                                alt=""
+                                src={product.url_image}
+                                className="style-img-product"
+                                onClick={() => handleClick(product)}
+                              ></img>
+                            </span>{" "}
+                            <span style={{ paddingLeft: "10px" }}>
+                              {product.title}
+                            </span>
+                          </td>
+                          <td className="test" style={{ paddingRight: "30px" }}>
+                            {product.time}
+                          </td>
+                          <td className="test">{product.bpm}</td>
+                          <td className="test" style={{ paddingLeft: "20px" }}>
+                            {product.tags.map((tag, index) => (
+                              <span style={{ paddingLeft: "5px" }} key={index}>
+                                {tag.name}
+                              </span>
+                            ))}
+                          </td>
+                          <td>
+                            <button
+                              className="btn btn-danger"
+                              data-bs-toggle="modal"
+                              href="#exampleModalToggle"
+                              style={{ width: "100px", background: "#e1192b" }}
+                              onClick={() => handleChange(product)}
+                            >
+                              <div className="button-price">
+                                <div>{showcart()}</div>
+                                <div style={{ paddingLeft: "2px" }}>
+                                  {product.prices[0].value}$
+                                </div>
+                              </div>
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 )}
                 <div>
                   <div>
@@ -472,6 +486,7 @@ function Menu(props) {
                             <h5
                               className="modal-title"
                               id="exampleModalToggleLabel"
+                              style={{ color: "black" }}
                             >
                               THÔNG TIN SẢN PHẨM
                             </h5>
@@ -499,8 +514,18 @@ function Menu(props) {
                                       ></img>
                                     </div>
                                   </div>
-                                  <div className="bottom-sub-body-left">
-                                    {product.title}
+                                  <div
+                                    className="bottom-sub-body-left"
+                                    style={{ fontWeight: "900" }}
+                                  >
+                                    <h4
+                                      style={{
+                                        fontWeight: "900",
+                                        color: "black",
+                                      }}
+                                    >
+                                      {product.title}
+                                    </h4>
                                   </div>
                                 </div>
                               </div>
@@ -511,17 +536,19 @@ function Menu(props) {
                                     ? product.prices.map((item, index) => (
                                         <div className="sub-choose-price">
                                           <div className="left-choose-price">
-                                            <h4
-                                              style={{ color: "#f4c82a " }}
+                                            <h3
+                                              style={{
+                                                color: "#f4c82a ",
+                                                fontWeight: "900",
+                                              }}
                                               key={index}
                                             >
                                               {item.name}
-                                            </h4>
+                                            </h3>
                                             <span>
                                               MP3, WAV and TRACK STEMS
                                             </span>
                                           </div>
-                                          <div className="between-choose-price"></div>
                                           <div
                                             className="right-choose-price"
                                             style={{ display: "flex" }}
@@ -531,7 +558,7 @@ function Menu(props) {
                                               data-bs-toggle="modal"
                                               href="#exampleModalToggle"
                                               style={{
-                                                width: "100px",
+                                                width: "100%",
                                                 background: "#f5222d",
                                                 paddingRight: "20px",
                                               }}

@@ -17,7 +17,7 @@ h1{
     justify-content: center;
 }
 .left-body-cart{
-    width: 80%;
+    width: 100%;
 }
 .sub-left-body-cart{
     padding: 20px;
@@ -35,10 +35,15 @@ width: 70%;
     display: flex;
 }
 .custom-remove{
-    padding: 0px 50px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.sub-remove{
+    width: 80%
 }
 .price-cart{
-    width: 100px;
+    width:50%;
 }
 .total-cart{
     width: 100%;
@@ -69,4 +74,5 @@ width: 70%;
 }
 .title-cart{
     font-family:Georgia, 'Times New Roman', Times, serif;
+  color: #00eb88;
 }

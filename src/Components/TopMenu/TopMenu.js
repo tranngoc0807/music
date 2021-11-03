@@ -2,11 +2,14 @@ import React from "react";
 import "../TopMenu/TopMenu.css";
 import { Link } from "react-router-dom";
 import Logo from "../../asset/img/logo.JPG";
-import { showcarts, showLogin, showPersonLogin } from "../../utils/common";
+import { showcarts, showPersonLogin } from "../../utils/common";
 import { useGlobalContext } from "../../App";
 import { withRouter } from "react-router-dom";
+import { Collapse } from "antd";
+
 function TopMenu(props) {
   const { cart } = useGlobalContext();
+  const {location} = props;
   const handleCheckCart = () => {
     if (cart.length !== 0) {
       props.history.push("/Cart");
@@ -23,46 +26,27 @@ function TopMenu(props) {
     window.localStorage.removeItem("token");
     props.history.push("/");
   };
+  const { Panel } = Collapse;
   const renderLogin = () => {
-    if (localStorage.getItem("token") === null) {
-      return (
-        <Link to="/Login" className="nav-link">
-          <div className="logo-login" style={{ display: "flex" }}>
-            <div>{showLogin()}</div>
-            <div>
-              <b className="text-size" style={{ paddingLeft: "5px" }}>
-                Log In
-              </b>
-            </div>
-          </div>
-        </Link>
-      );
-    } else {
-      return (
-        <div style={{ color: "white", display: "flex" }}>
-          <div className="buton-person-user">
-            <div style={{ paddingLeft: "27px", color: "#ffc069" }}>
-              {showPersonLogin()}
-            </div>
-            <div className="dropdown-out" style={{ paddingTop: "10px" }}>
-              <button
-                type="button"
-                className="btn btn-secondary "
-                onClick={handleDeleteToken}
-              >
-                Đăng xuất
-              </button>
-            </div>
-          </div>
-
-          <div className="color-signout" style={{ paddingLeft: "8px" }}>
-            {localStorage.getItem("username")}
+    return (
+      <div style={{ color: "white", display: "flex" }}>
+        <div className="buton-person-user">
+          <div style={{ paddingLeft: "27px", color: "#ffc069" }}>
+            {showPersonLogin()}
           </div>
         </div>
-      );
-    }
+
+        <div className="color-signout" style={{ paddingLeft: "8px" }}>
+          {localStorage.getItem("username")}
+        </div>
+      </div>
+    );
+    // }
   };
-  return (
+
+  const hasToken = localStorage.getItem('token');
+
+  return hasToken ? (
     <React.Fragment>
       <div className="header">
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -77,7 +61,7 @@ function TopMenu(props) {
               </div>
             </a>
             <button
-              className="navbar-toggler"
+              className="navbar-toggler color-responsive"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -110,7 +94,12 @@ function TopMenu(props) {
                       </Link>
                     </a>
                   </li>
-                  <li className="nav-item">
+                  <li
+                    className="nav-item"
+                    aria-expanded="false"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                  >
                     <Link to="/Footer" className="nav-link">
                       <b className="text-size">Valuation</b>
                     </Link>
@@ -127,7 +116,7 @@ function TopMenu(props) {
                       <b className="text-size">Service</b>
                     </a>
                     <ul
-                      className="dropdown-menu custom-dropdown"
+                      className="dropdown-menu custom-dropdown color-dropdown-menu"
                       aria-labelledby="navbarDropdown"
                     >
                       <Link to="/Customize" className="nav-link">
@@ -146,7 +135,7 @@ function TopMenu(props) {
                       </Link>
 
                       <Link to="Complain" className="nav-link">
-                        <li>
+                        <li aria-expanded="false">
                           <a className="dropdown-item text-size" href="/">
                             Complain
                           </a>
@@ -156,7 +145,15 @@ function TopMenu(props) {
                   </li>
                   <li>
                     <Link to="/Contact" className="nav-link">
-                      <b className="text-size"> Contact</b>
+                      <b
+                        className="text-size"
+                        aria-expanded="false"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                      >
+                        {" "}
+                        Contact
+                      </b>
                     </Link>
                   </li>
                   <li>
@@ -164,7 +161,10 @@ function TopMenu(props) {
                       variant="contained"
                       color="primary"
                       className="btn  count-cart"
-                      // style={{ background: "black" }}
+                      aria-expanded="false"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#navbarSupportedContent"
+                      style={{ background: "black" }}
                       onClick={handleCheckCart}
                     >
                       <div className="cust-count">
@@ -172,125 +172,95 @@ function TopMenu(props) {
                         <div className="count">
                           <div>{cart.length}</div>
                         </div>
-                        <div style={{ paddingLeft: "5px" }}></div>
                       </div>
                     </button>
                   </li>
-                  <li style={{ borderLeft: "1px solid white" }}>
-                    <div >{renderLogin()}</div>
-                  </li>
+                  {localStorage.getItem("token") ? (
+                    <li className="solid-topmenu">
+                      <div className="checkout-topmenu">
+                        <div className="sub-dropdown-out">
+                          <Collapse accordion>
+                            <Panel header={renderLogin()} key="1">
+                              <Link to="/" style={{ color: "black" }}>
+                                <div className="cus-dropdown-checkout">
+                                  <div className="cus-dropdown-checkout-item">
+                                    <div className="left">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="25"
+                                        height="25"
+                                        fill="currentColor"
+                                        class="bi bi-house-fill"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+                                        />
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
+                                        />
+                                      </svg>
+                                    </div>
+                                    <div className="right">Trang chủ</div>
+                                  </div>
+                                </div>
+                              </Link>
+                              <Link to="/login" style={{ color: "black" }}>
+                                <div className="cus-dropdown-checkout ">
+                                  <div
+                                    className="cus-dropdown-checkout-item"
+                                    onClick={handleDeleteToken}
+                                  >
+                                    <div className="left">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="25"
+                                        height="25"
+                                        fill="currentColor"
+                                        class="bi bi-box-arrow-right"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"
+                                        />
+                                        <path
+                                          fill-rule="evenodd"
+                                          d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                                        />
+                                      </svg>
+                                    </div>
+
+                                    <div className="right">Đăng Xuất</div>
+                                  </div>
+                                </div>
+                              </Link>
+                              <Link to="/" style={{ color: "black" }}>
+                                <div className="cus-dropdown-checkout">
+                                  <div className="cus-dropdown-checkout-item">
+                                    <div className="left">
+                                      {showPersonLogin()}
+                                    </div>
+                                    <div className="right">Đổi Tài Khoản</div>
+                                  </div>
+                                </div>
+                              </Link>
+                            </Panel>
+                          </Collapse>
+                          ,
+                        </div>
+                      </div>
+                    </li>
+                  ) : null}
                 </ul>
               </div>
             </div>
           </div>
         </nav>
       </div>
-
-      {/* <div className="header">
-        <div className="body-topmenu">
-          <nav className="navbar navbar-expand-lg navbar-light">
-            <div id="logo-home">
-              <Link to="/">
-                <div onClick={handleloading}>
-                  <img alt="" src={Logo} />
-                </div>
-              </Link>
-            </div>
-
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
-            >
-              <ul className="menu-item">
-                <li>
-                  <Link to="/" className="nav-link">
-                    <div onClick={handleloading} className="reload">
-                      <b className="text-size">Buy Beats</b>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/Footer" className="nav-link">
-                    <b className="text-size">Valuation</b>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/License" className="nav-link">
-                    <b className="text-size"> License</b>
-                  </Link>
-                </li>
-                <li>
-                  <div className="dropdown">
-                    <button
-                      className="btn "
-                      type="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      <b className="text-size" style={{ color: "#fff" }}>
-                        Service
-                      </b>
-                    </button>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton1"
-                    >
-                      <Link to="/Customize" className="nav-link">
-                        <li>
-                          <a className="dropdown-item text-size" href="/">
-                            Customize
-                          </a>
-                        </li>
-                      </Link>
-                      <Link to="/BuyBeast" className="nav-link">
-                        <li>
-                          <a className="dropdown-item text-size" href="/">
-                            Buy Beats
-                          </a>
-                        </li>
-                      </Link>
-
-                      <Link to="Complain" className="nav-link">
-                        <li>
-                          <a className="dropdown-item text-size" href="/">
-                            Complain
-                          </a>
-                        </li>
-                      </Link>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <Link to="/Contact" className="nav-link">
-                    <b className="text-size"> Contact</b>
-                  </Link>
-                </li>
-                <li>
-                  <button
-                    variant="contained"
-                    color="primary"
-                    className="btn "
-                    style={{ background: "black" }}
-                    onClick={handleCheckCart}
-                  >
-                    <div className="cust-count">
-                      <div>{showcarts()} </div>
-                      <div className="count">
-                        <div>{cart.length}</div>
-                      </div>
-                      <div style={{ paddingLeft: "5px" }}></div>
-                    </div>
-                  </button>
-                </li>
-                <li style={{ borderLeft: "1px solid white" }}>
-                  {renderLogin()}
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div> */}
     </React.Fragment>
-  );
+  ) : '';
 }
 export default withRouter(TopMenu);

@@ -36,7 +36,7 @@ ul {
   
 }
 .text-size{
-    color: white;
+    color: white ;
     font-size: 1rem;
 }
 .left-top-navbar{
@@ -70,6 +70,11 @@ ul {
 .logo-login{
 	color: white;
 }
+.cus-dropdown-checkout-item{
+display: flex;
+width: 100%;
+padding: 10px 10px;
+}
 .count{
 
     font-size: 10px;
@@ -85,11 +90,59 @@ ul {
     display: inline-block;
 }
 .dropdown-out{
+    background: white;
     display: none;
     position: absolute;
 }
+.sub-dropdown-out{
+    padding: 10px 10px
+}	
+.ant-collapse{
+    background: black;
+    border: 0px;
+    border-bottom: 0px;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    position: relative;
+    padding: 0px;
+    color: rgba(0, 0, 0, 0.85);
+    line-height: 1.5715;
+    cursor: pointer;
+    transition: all 0.3s, visibility 0s;
+}
 .buton-person-user:hover .dropdown-out{
     display:block;
+}
+.nav-item .dropdown:hover li a{
+	color: black;
+}
+.left{
+    width: 30%;
+}
+.right{
+    width: 70%;
+}
+.cus-dropdown-checkout{
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+}
+.cus-dropdown-checkout:hover{
+    background: #e3e0cc;
+}
+.solid-topmenu{
+    height: 85px;
+    color: black;
+}
+.ant-collapse > .ant-collapse-item {
+border-bottom: 0px;
+}
+.ant-collapse-content.ant-collapse-content-active{
+    position: absolute;
+    right: 20px;
+    top: 71%;
+    width: 180px;
+    border-radius: 10px;
 }
 @media (max-width:992px) {
     .navbar-expand-lg {
@@ -109,7 +162,7 @@ ul {
 			color: tomato;
 		}
 		.count{
-			background: blue;
+			background: red;
 		}
 		.logo-login{
 			color: tomato;
@@ -118,4 +171,20 @@ ul {
 			color: tomato;
 			font-weight: 900;
 		}
+  .navbar-light{
+		background:black;
+	}   
+	.color-responsive{
+		background:#0080FF;
+	}
+	.checkout-topmenu{
+		padding: 15px 0px;
+	}
+	.solid-topmenu{
+		border:0px;
+	}
+	.color-dropdown-menu{
+		background: gray;
+	}
+	
 }

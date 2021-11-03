@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Cart/Cart.css";
 import { useGlobalContext } from "../../App";
 import { withRouter } from "react-router-dom";
@@ -16,7 +16,7 @@ function Cart(props) {
 
   // tổng giá tiền trước khi discount
   const total = cart
-.reduce((total, thing) => total + thing.price.value, 0)
+    .reduce((total, thing) => total + thing.price.value, 0)
     .toFixed(2);
   // giá sale
   let discount = 0;
@@ -40,7 +40,12 @@ function Cart(props) {
       console.log(cart);
       const saveorder = await axios.post(
         "https://sale-beat.herokuapp.com/order",
-        { items: cart },{headers:{Authorization: ` eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGVJZCI6Miwicm9sZSI6IkN1c3RvbWVyIiwidXNlck5hbWUiOiJ1c2VyMSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNjI3NzE5NzI0fQ.cqZAO1v5KEQr5puNoLh1VLbyCeum6beQxIuUaz3f2kQ`}}
+        { items: cart },
+        {
+          headers: {
+            Authorization: ` eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsInJvbGVJZCI6Miwicm9sZSI6IkN1c3RvbWVyIiwidXNlck5hbWUiOiJ1c2VyMSIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNjI3NzE5NzI0fQ.cqZAO1v5KEQr5puNoLh1VLbyCeum6beQxIuUaz3f2kQ`,
+          },
+        }
       );
       props.history.push("/");
       toast.success("Mua Hàng Thành Công!", {
@@ -52,12 +57,14 @@ function Cart(props) {
         draggable: true,
         progress: undefined,
       });
-      setCart([])
+      setCart([]);
       window.localStorage.removeItem("cart");
       console.log(saveorder);
     }
   };
-  const pay = total - discount; /* giá tiền sau khi trừ  discount */
+  const pay = (total - discount).toFixed(
+    2
+  ); /* giá tiền sau khi trừ  discount */
   return (
     <div className="wrapper">
       <div className="container" style={{ padding: "20px 10px" }}>
@@ -94,22 +101,24 @@ function Cart(props) {
                 <div className="price-sub-left-body-cart">
                   <div className="price-cart">{product.price.value}$</div>
                   <div className="custom-remove">
-                    <button
-                      style={{ background: "#ADADAD" }}
-                      onClick={() => handleremove(product)}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={25}
-                        height={25}
-                        fill="currentColor"
-                        className="bi bi-x-circle"
-                        viewBox="0 0 16 16"
+                    <div className="sub-remove">
+                      <button
+                        style={{ background: "#ADADAD" }}
+                        onClick={() => handleremove(product)}
                       >
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                      </svg>
-                    </button>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width={25}
+                          height={25}
+                          fill="currentColor"
+                          className="bi bi-x-circle"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
